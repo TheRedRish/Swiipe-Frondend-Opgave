@@ -11,15 +11,16 @@
     </head>
 
     <body>
-        <form action="/FrontendjQuery.js" method="get">
-            <input type="text" id="fname" name="fname" placeholder="Fornavn" autofocus><br><br>
-            <input type="text" id="lname" name="lname" placeholder="Efternavn"><br><br>
+        <form id="my-form">
+            <p><input type="text" id="fname" name="fname" placeholder="Fornavn" autofocus></p>
+            <p><input type="text" id="lname" name="lname" placeholder="Efternavn"></p>
             <select id="status" name="status">
                 <option value="Privat">Privat</option>
                 <option value="Company">Firma</option>
                 <option value="Public">Offentlig</option>
-            </select><br><br>
-            <input type="submit" value="Submit">
+            </select>
+            <p><input type="submit" id="submit" value="Submit"></p>
           </form> 
+          <h1 id="submit-answer">Placement for tekst from the form</h1>
     </body>
 </html>
