@@ -1,0 +1,1 @@
+Brugte datalist i stedet for select og havde problemer med at kunne vælge fra listen igen fordi den tog input som et søgefelt.

@@ -3,7 +3,8 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $('#input').on('click', function(){
-        console.log('Button clicked')
+    $('input').eq(2).on('click', function(){
+        console.log('input clicked')
+        $('this').val('')
     })
 });
