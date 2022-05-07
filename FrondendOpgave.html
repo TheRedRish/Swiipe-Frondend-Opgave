@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="FrontendjQuery.js"></script>
-        <link rel="stylesheet" href="FrondendCSS.css">
-    </head>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="FrontendjQuery.js"></script>
+    <link rel="stylesheet" href="FrondendCSS.css" />
+  </head>
 
-    <body>
-        <form id="my-form">
-            <p><input type="text" id="fname" name="fname" placeholder="Fornavn" autofocus></p>
-            <p class="error_form" id="fname_error_message"></p>
-            
-            <p><input type="text" id="lname" name="lname" placeholder="Efternavn"></p>
-            <p class="error_form" id="lname_error_message"></p>
+  <body>
+    <div>
+      <form id="my-form">
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Fornavn"
+          autofocus
+        />
+        <p class="error_form" id="fname_error_message"></p>
 
-            <select id="status" name="status">
-                <option value="Privat">Privat</option>
-                <option value="Company">Firma</option>
-                <option value="Public">Offentlig</option>
-            </select>
+        <p>
+          <input type="text" id="lname" name="lname" placeholder="Efternavn" />
+        </p>
+        <p class="error_form" id="lname_error_message"></p>
 
-            <p><input type="submit" id="submit" value="Submit"></p>
-          </form> 
-          
-          <h1 id="submit-answer">Placement for tekst from the form</h1>
-    </body>
+        <select id="status" name="status">
+          <option value="Privat">Privat</option>
+          <option value="Company">Firma</option>
+          <option value="Public">Offentlig</option>
+        </select>
+
+        <p>
+          <input type="submit" id="submit" value="Submit" />
+        </p>
+      </form>
+    </div>
+
+    <div class="submissionAnswers" id="submissionAnswers" hidden>
+      <div id="submit_answer_fname">Firstname: </div>
+      <div id="submit_answer_lname">Lastname: </div>
+      <div id="submit_answer_status">Lastname: </div>
+    </div>
+
+  </body>
 </html>

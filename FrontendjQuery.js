@@ -1,59 +1,84 @@
-$(document).ready(function(event){
-    console.log('Siden er klar!')
+$(document).ready(function (event) {
+  console.log("Siden er klar!");
 });
 
-$(function(){
-    $('#my-form').on('submit', function(event){
+var toggle = false;
+
+$(function () {
+  $("#my-form").on("submit", function (event) {
     event.preventDefault();
 
-    var firstname = $('#fname').val();
-    var lastname = $('#lname').val();
-    var status = $('#status').val();
+    var firstname = $("#fname").val();
+    var lastname = $("#lname").val();
+    var status = $("#status").val();
 
-    $('#submit-answer').html(firstname+lastname+status);
-    });
-})
-
-
-$(function(){
-    $('#my-form').on('submit', function(){
-        var fname = $("#fname").val();
-        var lname = $("#lname").val();
-        var succes = false;
-
-        if (fname == '') {
-            $("#fname_error_message").html("Should contain only Characters");
-            $("#fname_error_message").show();
-        }
-        else {
-            $("#fname_error_message").hide();
-        }
-        if (lname == '') {
-            $("#lname_error_message").html("Should contain only Characters");
-            $("#lname_error_message").show();
-        }    
-        else {
-            $("#lname_error_message").hide();
-        }    
-        
-    })
-    
-})
-/*
-$("#fname").focusout(function(){
-    if (fname !== '') {
-       $("#fname_error_message").hide();
-    } else {
-       $("#fname_error_message").html("Should contain only Characters");
-       $("#fname_error_message").show();
+    if (firstname !== "" && lastname !== "") {
+      $("#submit_answer_fname").html(firstname);
+      $("#submit_answer_lname").html(lastname);
+      $("#submit_answer_status").html(status);
+      $("#submissionAnswers").removeAttr("hidden");
+      console.log("Completed");
     }
+
+    if (firstname == "") {
+      $("#fname_error_message").text("Indtast venligst et fornavn");
+      $("#fname_error_message").show();
+      $("#submit").attr("disabled", true);
+    } else {
+      $("#fname_error_message").hide();
+    }
+    if (lastname == "") {
+      $("#lname_error_message").text("Indtast venligst et efternavn");
+      $("#lname_error_message").show();
+      $("#submit").attr("disabled", true);
+    } else {
+      $("#lname_error_message").hide();
+    }
+
+    toggle = true;
+  });
 });
 
-$("#lname").focusout(function(){
-    if (lname !== '') {
-        $("#lname_error_message").hide();
-    } else {
-        $("#lname_error_message").html("Should contain only Characters");
-        $("#lname_error_message").show();
+$(function () {
+  $("#fname").change(function (event) {
+    event.preventDefault();
+
+    var firstname = $("#fname").val();
+    var lastname = $("#lname").val();
+
+    if (toggle) {
+      if (firstname == "") {
+        $("#fname_error_message").text("Indtast venligst et fornavn");
+        $("#fname_error_message").show();
+        $("#submit").attr("disabled", true);
+      } else {
+        $("#fname_error_message").hide();
+      }
+
+      if (firstname !== "" && lastname !== "") {
+        $("#submit").attr("disabled", false);
+      }
     }
-});*/
+  });
+
+  $("#lname").change(function (event) {
+    event.preventDefault();
+
+    var firstname = $("#fname").val();
+    var lastname = $("#lname").val();
+
+    if (toggle) {
+      if (lastname == "") {
+        $("#lname_error_message").text("Indtast venligst et efternavn");
+        $("#lname_error_message").show();
+        $("#submit").attr("disabled", true);
+      } else {
+        $("#lname_error_message").hide();
+      }
+
+      if (firstname !== "" && lastname !== "") {
+        $("#submit").attr("disabled", false);
+      }
+    }
+  });
+});

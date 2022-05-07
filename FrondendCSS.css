@@ -1,3 +1,12 @@
 body {
-    background-color: green;
+  background-color: green;
+}
+
+.error_form {
+  color: red;
+}
+
+.submissionAnswers{
+    background-color: yellow;
+    width: 20%;
 }
