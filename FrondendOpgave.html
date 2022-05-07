@@ -25,22 +25,29 @@
         <p class="error_form" id="lname_error_message"></p>
 
         <select id="status" name="status">
-          <option value="Privat">Privat</option>
-          <option value="Company">Firma</option>
-          <option value="Public">Offentlig</option>
+          <option id="privat" value="Privat">
+            <label for="privat">Privat</label>
+          </option>
+
+          <option id="firma" value="Company">
+            <label for="firma">Firma</label>
+          </option>
+
+          <option id="offentlig" value="Public">
+            <label for="offentlig">Offentlig</label>
+          </option>
         </select>
 
         <p>
-          <input type="submit" id="submit" value="Submit" />
+          <input type="submit" id="submit" value="Send" />
         </p>
       </form>
     </div>
 
     <div class="submissionAnswers" id="submissionAnswers" hidden>
-      <div id="submit_answer_fname">Firstname: </div>
-      <div id="submit_answer_lname">Lastname: </div>
-      <div id="submit_answer_status">Lastname: </div>
+      <div id="submit_answer_fname">Firstname:</div>
+      <div id="submit_answer_lname">Lastname:</div>
+      <div id="submit_answer_status">Lastname:</div>
     </div>
-
   </body>
 </html>

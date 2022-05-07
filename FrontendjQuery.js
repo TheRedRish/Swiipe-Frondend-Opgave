@@ -10,7 +10,7 @@ $(function () {
 
     var firstname = $("#fname").val();
     var lastname = $("#lname").val();
-    var status = $("#status").val();
+    var status = $("#status").find(":selected").text();
 
     if (firstname !== "" && lastname !== "") {
       $("#submit_answer_fname").html(firstname);
