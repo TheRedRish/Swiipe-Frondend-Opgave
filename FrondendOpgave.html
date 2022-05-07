@@ -9,22 +9,16 @@
 
   <body>
     <div>
-      <form id="my-form">
-        <input
-          type="text"
-          id="fname"
-          name="fname"
-          placeholder="Fornavn"
-          autofocus
-        />
+      <form id="my-form"> <!-- Form med indtast af fornavn, efternavn og valg af status-->
+        <input type="text" id="fname" name="fname" placeholder="Fornavn" autofocus/> <!--Valg af navn-->
         <p class="error_form" id="fname_error_message"></p>
 
         <p>
-          <input type="text" id="lname" name="lname" placeholder="Efternavn" />
+          <input type="text" id="lname" name="lname" placeholder="Efternavn" /><!--Valg af efternavn-->
         </p>
         <p class="error_form" id="lname_error_message"></p>
 
-        <select id="status" name="status">
+        <select id="status" name="status"><!--Dropdown menu med valg af status-->
           <option id="privat" value="Privat">
             <label for="privat">Privat</label>
           </option>
@@ -39,15 +33,15 @@
         </select>
 
         <p>
-          <input type="submit" id="submit" value="Send" />
+          <input type="submit" id="submit" value="Send" /> <!--Submit knap-->
         </p>
       </form>
     </div>
 
-    <div class="submissionAnswers" id="submissionAnswers" hidden>
-      <div id="submit_answer_fname">Firstname:</div>
-      <div id="submit_answer_lname">Lastname:</div>
-      <div id="submit_answer_status">Lastname:</div>
+    <div class="submissionAnswers" id="submissionAnswers" hidden> <!--Output af fornavn, efternavn og status-->
+      <div id="submit_answer_fname"></div>
+      <div id="submit_answer_lname"></div>
+      <div id="submit_answer_status"></div>
     </div>
   </body>
 </html>
